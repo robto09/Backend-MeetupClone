@@ -1,0 +1,11 @@
+{% autoescape off %}
+Hi {{ user.username }},
+{%if type == 'reset' %}
+Reset your password
+http://{{ domain }}/api/account/reset-password/?u_t={{token}}
+{%else%}
+Confirm your registration,
+http://{{ domain }}/account/activate/?u_t={{token}}
+
+{%endif%}
+{% endautoescape %}
